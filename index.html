@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="logo-nonla.png">
+  <title>Gia Hue - Traditional Ginger Jam from Hue</title>
+  <link rel="stylesheet" href="main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="GIA HUE logo" style="max-width: 150px; margin-bottom: 15px;">
+    <h1>GIA HUE</h1>
+    <p>Traditional Ginger Jam – A Taste of Hue's Memories and Love</p>
+  </header>
+
+  <div class="marquee">
+    <span>❣️ Every piece of ginger jam brings back memories of Hue... ❣️ Spicy jam – warm tea – old stories ❣️</span>
+  </div>
+
+  <section class="section" id="gioithieu">
+    <h2>Ginger Jam & The Soul of Hue</h2>
+    <p>People often say Hue is melancholic, but in truth, it is simply serene – a place holding deep and tender memories.
+    Some memories don’t need words. Just a warm teapot and a plate of ginger jam, and everything gently returns: 
+    the crackling firewood, mother’s careful hands stirring the pot, and children's laughter echoing in the Lunar New Year air.</p>
+    <p>GIA HUE’s Ginger Jam isn’t a luxury treat, but a gift wrapped in love and nostalgia – made in a family kitchen,
+    with real fire, real hands, and real patience – just like cooking for our own loved ones.</p>
+    <img src="sanpham3.png" alt="GIA HUE Ginger Jam">
+  </section>
+
+  <section class="section" id="loiich">
+    <h2>A Taste You’ll Never Forget</h2>
+    <p><strong>❣️ Ginger Jam with a special touch</strong> – every bite awakens memories of Tet, 
+    of mothers by the fire, a warm jam plate, and hot tea on a breezy veranda.</p>
+    <p><b>GIA HUE’s Ginger Jam</b> is made from native Hue ginger – known for its rich aroma, gentle spiciness, and sweet aftertaste – 
+    much like Hue people: profound yet modest, warm yet quiet.</p>
+  </section>
+
+  <section class="section" id="chatluong">
+    <h2>GIA HUE's Commitments</h2>
+    <p>✅ Made from <b>authentic Hue ginger from Tuan village</b> – naturally fragrant, soft, and thin-skinned<br>
+       ✅ No preservatives – <b>no bleaching – no artificial coloring</b><br>
+       ✅ Cooked over a <b>traditional wood stove</b> using a <b>handed-down family recipe</b><br>
+       ✅ Every batch is handcrafted with care – <i>just like we make for our own family</i></p>
+  </section>
+
+  <section class="section" id="gallery">
+    <h2>The Making Moments</h2>
+    <div class="slider">
+      <img src="rua-gung.jpg" alt="Washing ginger" class="slide active">
+      <img src="bep-cui.jpg" alt="Wood fire cooking" class="slide">
+      <img src="canh-mut.jpg" alt="Jam making scene" class="slide">
+    </div>
+  </section>
+
+  <section class="section video-popup" id="video">
+    <h2>Discover the Secret Behind Every Batch</h2>
+    <iframe src="video.mp4" title="Ginger Jam Video" allowfullscreen></iframe>
+  </section>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+
+    // Auto slider
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 4000);
+  </script>
+</body>
+</html>
